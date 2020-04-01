@@ -4,10 +4,10 @@
   become: true
   become_method: sudo
   vars:
-    uname: ksv
-    ugroups: ksv
+    uname: user1
+    ugroups: user1
     ucomment: "None"
-    pub_key_file: "/home/support/ansible_zabbix/ssh/ksv.pub"
+    pub_key_file: "/Path/ssh_key.pub"
 
   roles:
     - create_user
