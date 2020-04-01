@@ -1,0 +1,31 @@
+---
+  - name: Ensure group exists
+    group:
+      name: '{{ uname }}'
+      state: present
+
+  - name: Add the user with password
+    user:
+      name: '{{ uname }}'
+      comment: '{{ ucomment }}'
+      shell: /bin/bash
+      groups: "{{ ugroups }}"
+      generate_ssh_key: yes
+      password: '{{ password }}'
+    when: password is defined
+
+  - name: Add the user without password
+    user:
+      name: '{{ uname }}'
+      comment: '{{ ucomment }}'
+      shell: /bin/bash
+      groups: "{{ ugroups }}"
+      generate_ssh_key: yes
+    when: password is not defined
+
+  - name: Set authorized key
+    authorized_key:
+      user: '{{ uname }}'
+      key: '{{ item }}'
+      state: present
+    with_file: "{{ pub_key_file }}"
