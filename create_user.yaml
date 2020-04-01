@@ -1,0 +1,13 @@
+---
+- name: Create User
+  hosts: all
+  become: true
+  become_method: sudo
+  vars:
+    uname: ksv
+    ugroups: ksv
+    ucomment: "None"
+    pub_key_file: "/home/support/ansible_zabbix/ssh/ksv.pub"
+
+  roles:
+    - create_user
