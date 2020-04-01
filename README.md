@@ -30,4 +30,4 @@ ansible-playbook create_user.yaml
 
 Н-р:
 
-password: '$6$y/xwW0d$2cEx4fMffuFU5sSpSNe7wJuwNJ1O8VjZ0pKjV9Z3ZIHVozR3k1tSFg0QUvYb.UQSRFV8GObS8y8zGZV96FBlX/'
+password:'$6$y/xwW0d$2cEx4fMffuFU5sSpSNe7wJuwNJ1O8VjZ0pKjV9Z3ZIHVozR3k1tSFg0QUvYb.UQSRFV8GObS8y8zGZV96FBlX/'
